@@ -1,0 +1,29 @@
+﻿@using DigitalStore.Models
+@using DigitalStore.WebUI.ExtensionClasses
+@model Product
+
+<div id="PlaceHolderHere"></div>
+
+ <div class="item p-3">
+    <div class="oneItem">
+        <div class="forPrice">
+            @Model.ProductPrice.ToString("# $")
+        </div>
+        <div class="forName">  
+            <h3>
+                <a asp-controller="Product" asp-action="Details" asp-route-id="@Model.Id" class="link page-link">@Model.ProductName</a>
+            </h3>                  
+        </div>
+        <img src="@ImageConvertor.ConvetrByteArrayToString(Model.ProductImage)" style="max-width: 550px; max-height: 350px"/>
+        <br/>
+        <p class="overflow-scroll">@Model.ProductDescription</p>
+        <button type="button" class="btn btn-primary" data-toggle="ajax-modal" 
+                    data-target="#buyProduct" data-url="@Url.Action("Buy", "Cart",  new {Id = Model.Id} )" style="width:125px">
+                        Quick Buy
+        </button>
+        <a asp-controller="Product" asp-action="Index" asp-route-id="@Model.CategoryId" class="btn btn-secondary" style="width:125px">
+            Back to List
+        </a>
+    </div>     
+ </div>
+

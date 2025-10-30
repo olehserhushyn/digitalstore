@@ -1,0 +1,43 @@
+﻿@using DigitalStore.Models
+@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <br/>
+    <h1 class="display-4">Top products</h1>
+</div>
+
+<br /><br/>
+
+<div id="PlaceHolderHere"></div>
+
+<ul class="hr">
+ @foreach (var product in Model)
+{
+    <li>
+        <div class="forPrice">
+            @product.ProductPrice.ToString("# $")
+        </div>
+        <div class="forName">    
+            <h3>
+                <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="link page-link">@product.ProductName</a>
+            </h3> 
+            <br/>
+        </div>
+        <p class="overflow-hidden">@product.ProductDescription</p>
+        <div class="myButtons">
+            <button type="button" class="btn btn-primary" data-toggle="ajax-modal" 
+                    data-target="#buyProduct" data-url="@Url.Action("Buy", "Cart",  new {Id = product.Id} )" style="width:125px">
+                        Quick Buy
+            </button>
+            <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@product.Id" asp-route-returnUrl="@Context.Request.Path"
+            class="btn btn-secondary" style="width:125px">
+                 Add To Cart
+            </a>
+        </div>
+    </li>
+} 
+</ul>

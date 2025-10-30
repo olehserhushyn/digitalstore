@@ -1,0 +1,11 @@
+﻿@using DigitalStore.Models
+@model IEnumerable<Category>
+
+<tbody>
+    @foreach (var item in Model)
+    {
+        <a asp-controller="Product" asp-action="Index" asp-route-id="@item.Id" class="dropdown-item">
+            @item.CategoryName
+        </a>
+    }
+</tbody>

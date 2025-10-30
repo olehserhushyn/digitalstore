@@ -1,0 +1,32 @@
+﻿@using DigitalStore.Identity
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<tbody>    
+    @if (SignInManager.IsSignedIn(User))
+        {
+         <form  asp-page="/Account/Logout"
+            asp-route-returnUrl="@Url.Page("/", new { area = "" })"
+            asp-area="Identity" method="post" >
+            <button class="dropdown-item" type="submit">
+                Logout
+            </button>
+         </form>
+         <li class="nav-item dropdown">
+             <a class="nav-link" asp-area="Identity"
+             asp-page="/Account/Manage/Index" title="Manage">Hello
+                @User.Identity.Name!</a>
+         </li>
+        }
+        else
+        {
+             <a class="dropdown-item" asp-area="Identity"
+             asp-page="/Account/Register">Register</a>
+             <a class="dropdown-item" asp-area="Identity"
+             asp-page="/Account/Login">Login</a>  
+        }
+</tbody>
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,82 @@
+﻿@using DigitalStore.Models
+@using DigitalStore.WebUI.ExtensionClasses
+@using ReflectionIT.Mvc.Paging
+@model ReflectionIT.Mvc.Paging.PagingList<ProductOrder>
+@addTagHelper *, ReflectionIT.Mvc.Paging
+
+<nav class="pagination">
+    <vc:pager paging-list="@Model"/>
+</nav>
+
+<div class="container p-3">
+<table class="table table-bordered table-striped" style="width:100%">
+	<div class="col-12 text-end">
+			@*<a asp-controller="Product" asp-action="Create" class="btn btn-primary" style="width:100px">
+				<i class="bi bi-plus-square"></i> &nbsp; Create
+			</a>*@
+			Amount: @ViewBag.Sum $
+	</div>
+	<thead>
+		<tr>
+			<th>
+				Number
+			</th>
+			<th>
+				Customer FirstName
+			</th>
+			<th>
+				Customer MidName
+			</th>
+			<th>
+				Customer Phonenumber
+			</th>
+			<th>
+				Product Category
+			</th>
+			<th>
+				Product Name
+			</th>
+			<th>
+				Product Price
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@{
+			int counter = 0;
+		}
+		@foreach (var obj in Model)
+		{
+			counter++;
+			<tr>
+				<td width="5%">
+					@counter
+				</td>
+				<td width="15%">
+					@obj.Order.Customer.FirstName
+				</td>
+				<td width="15%">
+					@obj.Order.Customer.MidName
+				</td>
+				<td width="10%">
+					@obj.Order.Customer.PhoneNumber
+				</td>
+				<td width="10%">
+					@obj.Product.Category.CategoryName
+				</td>
+				<td width="15%">
+					@obj.Product.ProductName
+				</td>
+				<td width="10%">
+					@obj.Product.ProductPrice $
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+</div>
+
+<nav class="pagination">
+    <vc:pager paging-list="@Model"/>
+</nav>

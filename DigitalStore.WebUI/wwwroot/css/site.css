@@ -1,0 +1,157 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    flex: 0 0 50px;
+}
+
+/*NOT bad without color*/
+/*.pagination {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.pagination li {
+    display: inline;
+    text-align: center;
+}
+
+.pagination a {
+    float: left;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px 12px;
+    color: #585858;
+    margin-left: -1px;
+    border: 1px solid transparent;
+    line-height: 1.5;
+}*/
+
+.rowItem {
+    background-color: #E9F0F1;
+    border-style: outset;
+    padding: 5px;
+}
+
+.oneItem {
+    background-color: #E9F0F1;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+}
+
+.forPrice {
+    float: right;
+    width: 100px;
+    padding: 10px;
+    border-width: thick;
+    border-color: black;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: lightsteelblue;
+}
+
+.forName {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+#cartId {
+    float: right !important;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+#closebtn {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    margin-left: 50px;
+    border: 0;
+    background-color: white;
+}
+
+#shiftLeft {
+    left: -115px;
+}
